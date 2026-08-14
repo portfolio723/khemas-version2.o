@@ -1,6 +1,7 @@
 import React from 'react';
 import { Product } from '../types';
 import { ProductGallery } from './ProductGallery';
+import { PdfBrochureLink } from './PdfBrochureLink';
 import { ArrowRight, Clock, Truck } from 'lucide-react';
 
 interface ProductSectionProps {
@@ -45,6 +46,11 @@ export const ProductSection: React.FC<ProductSectionProps> = ({
           <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
             {product.description}
           </p>
+
+          {/* Product Brochure PDF Link */}
+          <div className="pt-1">
+            <PdfBrochureLink product={product} />
+          </div>
 
           {/* Specifications */}
           <div className="space-y-2.5">
