@@ -251,16 +251,32 @@ export const QuickEnquiry: React.FC = () => {
               </div>
 
               {/* Submit CTA */}
-              <div className="pt-2 flex justify-center">
+              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <button
                   id="quick-enquiry-submit-btn"
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full sm:w-auto px-8 py-3 text-sm font-medium text-white bg-neutral-900 hover:bg-neutral-800 rounded-lg transition-colors cursor-pointer inline-flex items-center justify-center space-x-2 focus:outline-hidden focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2"
+                  className="w-full sm:w-auto px-8 py-3 text-sm font-medium text-white bg-neutral-900 hover:bg-neutral-800 rounded-lg transition-colors cursor-pointer inline-flex items-center justify-center space-x-2 focus:outline-hidden focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 shadow-xs"
                 >
                   <span>{isSubmitting ? 'Processing...' : 'Get Quote'}</span>
                   <Send className="w-4 h-4" />
                 </button>
+
+                <a
+                  id="quick-enquiry-whatsapp-btn"
+                  href="https://wa.me/?text=Hello%20Khemas%20Engineers%2C%20I%20would%20like%20to%20inquire%20about%20flow-measuring%20rotameters."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-6 py-3 text-sm font-medium text-neutral-800 bg-white hover:bg-neutral-100 border border-neutral-300 rounded-lg transition-colors cursor-pointer inline-flex items-center justify-center space-x-2.5 shadow-xs"
+                >
+                  <img
+                    src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000"
+                    alt="WhatsApp"
+                    className="w-5 h-5 shrink-0 object-contain"
+                    referrerPolicy="no-referrer"
+                  />
+                  <span>Chat on WhatsApp</span>
+                </a>
               </div>
             </form>
           )}

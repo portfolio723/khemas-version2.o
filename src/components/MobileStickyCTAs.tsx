@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageSquare, FileText } from 'lucide-react';
+import { FileText } from 'lucide-react';
 
 interface MobileStickyCTAsProps {
   onOpenQuote: () => void;
@@ -29,10 +29,15 @@ export const MobileStickyCTAs: React.FC<MobileStickyCTAsProps> = ({
           type="button"
           id="mobile-whatsapp-btn"
           onClick={handleWhatsApp}
-          className="flex items-center justify-center space-x-2 py-3 px-3 rounded-lg border border-emerald-600 bg-emerald-50 text-emerald-800 hover:bg-emerald-100 font-medium text-sm transition-colors cursor-pointer"
+          className="flex items-center justify-center space-x-2.5 py-3 px-3 rounded-lg border border-neutral-300 bg-white text-neutral-900 hover:bg-neutral-50 font-medium text-sm transition-colors cursor-pointer shadow-xs"
         >
-          <MessageSquare className="w-4 h-4 text-emerald-600 shrink-0" />
-          <span className="truncate">WhatsApp</span>
+          <img
+            src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000"
+            alt="WhatsApp"
+            className="w-5.5 h-5.5 shrink-0 object-contain"
+            referrerPolicy="no-referrer"
+          />
+          <span className="truncate font-medium">WhatsApp</span>
         </button>
 
         {/* Get Quote Button */}

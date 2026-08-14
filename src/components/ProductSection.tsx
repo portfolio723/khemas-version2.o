@@ -183,8 +183,8 @@ export const ProductSection: React.FC<ProductSectionProps> = ({
             </p>
           </div>
 
-          {/* Section CTA */}
-          <div className="pt-2">
+          {/* Section CTAs */}
+          <div className="pt-2 flex flex-wrap items-center gap-3">
             <button
               id={`quote-btn-${product.id}`}
               type="button"
@@ -194,6 +194,24 @@ export const ProductSection: React.FC<ProductSectionProps> = ({
               <span>Request a Quote</span>
               <ArrowRight className="w-4 h-4" />
             </button>
+
+            <a
+              id={`whatsapp-btn-${product.id}`}
+              href={`https://wa.me/?text=${encodeURIComponent(
+                `Hello Khemas Engineers, I would like technical details and a quote for ${product.name}.`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center space-x-2.5 w-full sm:w-auto px-5 py-3 text-sm font-medium text-neutral-800 bg-white hover:bg-neutral-50 border border-neutral-300 rounded-lg transition-colors cursor-pointer shadow-xs"
+            >
+              <img
+                src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000"
+                alt="WhatsApp"
+                className="w-5 h-5 shrink-0 object-contain"
+                referrerPolicy="no-referrer"
+              />
+              <span>Inquire on WhatsApp</span>
+            </a>
           </div>
         </div>
       </div>

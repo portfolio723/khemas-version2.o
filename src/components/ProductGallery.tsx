@@ -133,23 +133,48 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
         )}
       </div>
 
-      {/* Gallery Dots Navigation */}
-      <div className="flex items-center justify-center space-x-2 mt-3" role="tablist">
-        {images.map((img, idx) => (
-          <button
-            key={img.id}
-            type="button"
-            role="tab"
-            aria-selected={currentIndex === idx}
-            aria-label={`Image ${idx + 1} of ${images.length}: ${img.title}`}
-            onClick={() => handleDotClick(idx)}
-            className={`transition-all rounded-full cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-neutral-800 ${
-              currentIndex === idx
-                ? 'w-6 h-2 bg-neutral-900'
-                : 'w-2 h-2 bg-neutral-300 hover:bg-neutral-400'
-            }`}
-          />
-        ))}
+      {/* Product Thumbnails (Hover / Click to preview main view) */}
+      <div
+        className="grid grid-cols-4 gap-2 sm:gap-2.5 mt-3 sm:mt-4"
+        role="tablist"
+        aria-label={`Views for ${productName}`}
+      >
+        {images.map((img, idx) => {
+          const isActive = currentIndex === idx;
+          return (
+            <button
+              key={img.id}
+              id={`thumb-${productId}-${idx}`}
+              type="button"
+              role="tab"
+              aria-selected={isActive}
+              aria-label={`View ${idx + 1} of ${images.length}: ${img.title}`}
+              onMouseEnter={() => {
+                handleDismissGesture();
+                setCurrentIndex(idx);
+              }}
+              onClick={() => {
+                handleDismissGesture();
+                setCurrentIndex(idx);
+              }}
+              onFocus={() => {
+                handleDismissGesture();
+                setCurrentIndex(idx);
+              }}
+              className={`relative aspect-square w-full rounded-lg sm:rounded-xl border p-1 sm:p-1.5 flex items-center justify-center transition-all cursor-pointer focus:outline-hidden ${
+                isActive
+                  ? 'border-neutral-900 ring-2 ring-neutral-900 bg-white shadow-xs'
+                  : 'border-neutral-200 bg-neutral-50/80 hover:border-neutral-400 hover:bg-white opacity-70 hover:opacity-100'
+              }`}
+            >
+              <ProductVisual
+                productId={productId}
+                viewIndex={idx}
+                className="w-full h-full object-contain pointer-events-none"
+              />
+            </button>
+          );
+        })}
       </div>
 
       {/* Caption / Technical View Details */}
