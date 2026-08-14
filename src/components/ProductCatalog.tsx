@@ -98,9 +98,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       </div>
 
       {/* Mobile Layout (Sticky Rail + Content) */}
-      <div className="lg:hidden flex gap-3 sm:gap-4 items-start">
-        {/* Mobile Left Sticky Rail */}
-        <div className="w-14 sm:w-16 shrink-0">
+      <div className="lg:hidden flex gap-3 sm:gap-4 items-stretch">
+        {/* Mobile Left Sticky Rail Container */}
+        <div className="w-14 sm:w-16 shrink-0 relative">
           <MobileProductRail
             products={products}
             activeProductId={activeProductId}

@@ -9,6 +9,7 @@ import { Product } from './types';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { ProductCatalog } from './components/ProductCatalog';
+import { ReviewsSection } from './components/ReviewsSection';
 import { QuickEnquiry } from './components/QuickEnquiry';
 import { DeliveryDisclaimer } from './components/DeliveryDisclaimer';
 import { QuoteModal } from './components/QuoteModal';
@@ -54,6 +55,9 @@ export default function App() {
           onRequestQuote={handleOpenQuote}
           onActiveProductChange={setActiveProduct}
         />
+
+        {/* Customer Reviews & Trust Section */}
+        <ReviewsSection />
 
         {/* Quick Enquiry Section */}
         <QuickEnquiry />

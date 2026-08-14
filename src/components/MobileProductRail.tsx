@@ -16,7 +16,7 @@ export const MobileProductRail: React.FC<MobileProductRailProps> = ({
   return (
     <aside
       aria-label="Mobile Product Selector"
-      className="sticky top-20 flex flex-col items-center py-2 space-y-3 z-30"
+      className="sticky top-24 self-start flex flex-col items-center py-1 space-y-2.5 z-30"
     >
       <div className="text-[10px] font-semibold uppercase text-neutral-400 tracking-wider">
         Items
